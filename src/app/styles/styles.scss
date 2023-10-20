@@ -1,0 +1,37 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+
+@import "./variables";
+@import "./bootstrap/variables";
+@import "./bootstrap/variables-dark";
+
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
+// @import '../../../node_modules/bootstrap/scss/containers';
+// @import "../../../node_modules/bootstrap/scss/grid";
+// @import "../../../node_modules/bootstrap/scss/helpers";
+
+// @import "../../../node_modules/bootstrap/scss/nav";
+// @import "../../../node_modules/bootstrap/scss/navbar";
+// @import "../../../node_modules/bootstrap/scss/nav";
+// @import "../../../node_modules/bootstrap/scss/navbar";
+// @import "../../../node_modules/bootstrap/scss/dropdown";
+// @import "../../../node_modules/bootstrap/scss/badge";
+
+@import "../../../node_modules/bootstrap/scss/utilities/api";
+
+@import "./mixins";
+
+@import "../../../node_modules/primeflex/primeflex.scss";
+
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import "~primeng/resources/primeng.min.css";
+@import "~primeicons/primeicons.css";
+
+@import './global';
+
+
+// Aquí se agregan los demás componentes...
