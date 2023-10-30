@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
+import { SpotService } from './core/services/spot/spot.service';
 
 registerLocaleData(localeEs)
 
@@ -18,7 +19,7 @@ registerLocaleData(localeEs)
     BrowserAnimationsModule,
     SharedModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }, SpotService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
