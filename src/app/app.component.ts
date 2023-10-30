@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterMatchMode, PrimeNGConfig } from 'primeng/api';
-
+import { SpotService } from 'src/app/core/services/spot/spot.service';
+import { Renderer2 } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'stability';
 
-  constructor(private primengConfig: PrimeNGConfig){}
+  constructor(
+    private primengConfig: PrimeNGConfig,
+    private renderer: Renderer2,
+    private spotService: SpotService
+  ) {
+    this.spotService.init(this.renderer);
+  }
 
   ngOnInit(): void {
     this.primengConfig.zIndex = {
       modal: 11000,
       overlay: 1000,
       menu: 1000,
-      tooltip: 1100
-    }
+      tooltip: 1100,
+    };
 
-    
     this.primengConfig.filterMatchModeOptions = {
       text: [
         FilterMatchMode.STARTS_WITH,
