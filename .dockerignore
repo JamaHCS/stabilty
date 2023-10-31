@@ -1,0 +1,14 @@
+._npm/
+.git/
+.nyc_output/
+.scannerwork/
+coverage/
+dc/
+node_modules/
+*.log
+*.zip
+*.tar
+*.tgz
+.sonar/
+.md
+dist/

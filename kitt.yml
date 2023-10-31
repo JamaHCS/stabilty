@@ -1,0 +1,98 @@
+owner:
+  group: mx-datafabricit-spot
+notify:
+  slack:
+    channelName: mx_spot_wcnp
+alerts:
+  email:
+    - "Santiago.Perez@walmart.com"
+    - "MxSpotDev@email.wal-mart.com"
+setup:
+  featureFlagMap: 
+    useArtifactory: true
+  releaseRefs: ["develop","stage","main","master"]     
+build:
+  skip: false
+  looper:
+    enableDockerNoCache: false
+    enableDockerClean: false
+  buildType: docker
+  docker:
+    app:             
+      dockerFile: Dockerfile  
+deploy:
+  namespace: mx-datafabricit-spot
+  releaseType:
+    strategy: normal
+    rollbackOnError: false
+    waitForReady: true
+    deployTimeout: 1200
+  gslb:
+    httpPortEnabled: true
+    httpsPortEnabled: true
+    httpsRedirect: true
+    strategy: clusterProfile
+    lbRoutings:
+      dev:
+        cnames: [spot.stability.dev.walmart.com]      
+      stage:
+        cnames: [spot.stability.qa.walmart.com]    
+      prod:
+        cnames: [spot.stability.prod.walmart.com]           
+  helm:
+    values:
+      metadata:
+        labels:
+          wm.app: SPOT_STABILITY
+          wm.env: prod    
+      min:
+        cpu: 100m
+        memory: 256Mi
+      max:
+        cpu: 150m
+        memory: 500Mi
+      networking:
+        httpsEnabled: true
+        httpEnabled: true
+        httpsRedirect: true
+        pathPrefix: /
+        internalPort: "3000"
+        externalPort: "3000"
+      livenessProbe:
+        wait: 1100     
+      readinessProbe:
+        wait: 120     
+  stages:
+    - name: dev     
+      target:
+        cluster_id: ["scus-dev-a4"] 
+      refs: ["develop"]
+      helm:
+        values:
+          scaling:
+            cpuPercent: 80
+            memoryPercent: 60
+            min: 1
+            max: 1                        
+    - name: stage
+      target:
+        cluster_id: ["scus-stage-a11"] 
+      refs: ["stage","main"]  
+      helm:
+        values:
+          scaling:
+            cpuPercent: 80
+            memoryPercent: 60
+            min: 1
+            max: 1                                            
+    - name: prod
+      target:
+        cluster_id: ["uscentral-prod-az-005"]
+      refs: ["main","master"] 
+      helm:
+        values:
+          scaling:
+            cpuPercent: 80
+            memoryPercent: 60
+            min: 1
+            max: 2                                       
