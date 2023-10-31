@@ -1,0 +1,15 @@
+schemaVersion: 1.0.0
+notify:
+  slack:
+    channelName: mx_spot_wcnp
+applications:
+  - key: SPOT_STABILITY
+    name: Spot_stability
+    organization: GeC
+    environments:
+      - name: dev
+        type: DEVELOPMENT
+      - name: stage
+        type: STAGING
+      - name: prod
+        type: PRODUCTION
