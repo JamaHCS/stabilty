@@ -5,32 +5,15 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: AppComponent,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        component: HomeComponent,
-      },
-      {
-        path: 'issues',
-        pathMatch: 'full',
-        loadChildren: () =>
-          import('./modules/issues/issues.module').then((m) => m.IssuesModule),
-      },
-      {
-        path: 'findings',
-        pathMatch: 'full',
-        loadChildren: () =>
-          import('./modules/findings/findings.module').then((m) => m.FindingsModule),
-      },
-    ],
+    path: 'home',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('./modules/modules.module').then((m) => m.ModulesModule),
   },
   {
-    path: '**',
-    redirectTo: '',
-  },
+    path:'**',
+    redirectTo:'home'
+  }
 ];
 
 @NgModule({
