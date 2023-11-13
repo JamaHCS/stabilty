@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import { SpotService } from './core/services/spot/spot.service';
+import { HomeComponent } from './pages/home/home.component';
 
 registerLocaleData(localeEs)
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
