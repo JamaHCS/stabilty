@@ -1,0 +1,33 @@
+body {
+  font-family: Bogle, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.wm {
+    color: #000;
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 700;
+    // line-height: 1.25rem; /* 80% */
+    letter-spacing: 0.03125rem;
+  }
+}
+
+h1{
+  text-transform: uppercase;
+}
+
+label.wm {
+  color: #000;
+  font-family: Bogle;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem; /* 100% */
+  letter-spacing: 0.025rem;
+}
