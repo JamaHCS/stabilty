@@ -1,5 +1,7 @@
-<p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
-
-<button mat-mini-fab color="primary" (click)="menu.toggle($event)" cdkDrag>
-  <mat-icon>menu</mat-icon>
-</button>
+<div class="floating-menu-container">
+  <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+  
+  <button mat-mini-fab color="primary" (click)="menu.toggle($event)" cdkDrag>
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

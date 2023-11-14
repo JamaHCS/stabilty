@@ -1,0 +1,12 @@
+.floating-menu-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  ul {
+    padding-left: 0;
+  }
+  
+  .p-menuitem-active {
+    border-left: 2px solid $color-walmart;
+  }
+}

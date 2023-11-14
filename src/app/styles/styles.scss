@@ -8,9 +8,9 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/root";
 @import "../../../node_modules/bootstrap/scss/utilities";
-@import "../../../node_modules/bootstrap/scss/reboot";
-@import "../../../node_modules/bootstrap/scss/type";
-@import '../../../node_modules/bootstrap/scss/containers';
+// @import "../../../node_modules/bootstrap/scss/reboot";
+// @import "../../../node_modules/bootstrap/scss/type";
+@import "../../../node_modules/bootstrap/scss/containers";
 @import "../../../node_modules/bootstrap/scss/grid";
 @import "../../../node_modules/bootstrap/scss/helpers";
 
@@ -25,16 +25,18 @@
 
 @import "./mixins";
 
+@import "./material/theme";
+
 @import "../../../node_modules/primeflex/primeflex.scss";
 
-@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "./primeng/theme.css";
 @import "~primeng/resources/primeng.min.css";
 @import "~primeicons/primeicons.css";
 
 @import "./global";
 @import "./text";
 
-
+@import "./components/floating-menu";
 @import "./components/button";
 @import "./components/create-issue";
 @import "./components/my-tickets";
