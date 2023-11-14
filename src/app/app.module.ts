@@ -8,8 +8,9 @@ import { registerLocaleData } from '@angular/common';
 import { SpotService } from './core/services/spot/spot.service';
 import { HomeComponent } from './pages/home/home.component';
 import localeEs from '@angular/common/locales/es';
+import { HttpClientModule } from '@angular/common/http';
 
-registerLocaleData(localeEs)
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -18,6 +19,7 @@ registerLocaleData(localeEs)
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }, SpotService],
   bootstrap: [AppComponent],
