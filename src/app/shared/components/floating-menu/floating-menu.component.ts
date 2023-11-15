@@ -12,16 +12,23 @@ export class FloatingMenuComponent {
   ngOnInit() {
     this.items = [
       {
+        label: 'Home',
+        routerLink: 'home',
+      },
+      {
         label: 'Issue',
         items: [
           {
             label: 'Create issue',
+            routerLink: '/home/issues/create',
           },
           {
             label: 'Edit issue',
+            routerLink: '/home/issues/edit',
           },
           {
             label: 'Search issue',
+            routerLink: '/home/issues/search',
           },
         ],
       },
@@ -30,12 +37,15 @@ export class FloatingMenuComponent {
         items: [
           {
             label: 'Create findings',
+            routerLink: '/home/findings/create',
           },
           {
             label: 'Edit findings',
+            routerLink: '/home/findings/edit',
           },
           {
             label: 'Search findings',
+            routerLink: '/home/findings/search',
           },
         ],
       },

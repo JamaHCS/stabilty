@@ -9,6 +9,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TableModule } from 'primeng/table';
+import { StepsModule } from 'primeng/steps';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { TableModule } from 'primeng/table';
     InputTextModule,
     RadioButtonModule,
     TableModule,
+    StepsModule,
   ],
   exports: [
     MenuModule,
@@ -34,6 +36,7 @@ import { TableModule } from 'primeng/table';
     CheckboxModule,
     RadioButtonModule,
     TableModule,
+    StepsModule,
   ],
 })
 export class PrimengModule {}

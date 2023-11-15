@@ -1,0 +1,70 @@
+.search-issue-container {
+  display: flex;
+  flex-direction: column;
+justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  min-height: 100vh;
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        margin-bottom: 1rem;
+      }
+
+      &.options {
+        flex-direction: row;
+        gap: 6rem;
+        
+        label {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    button.wm {
+      min-width: 10rem;
+    }
+  }
+
+  .general-info {
+    padding: 1rem;
+    background: var(--base-divider-line, #f1f1f2);
+    width: 100%;
+    min-height: 23rem;
+
+    li:not(.p-disabled) {
+      .p-steps-number {
+        background: #eef2ff !important;
+        color: #0071dc !important;
+      }
+    }
+
+    .p-menuitem-link {
+      background: var(--base-divider-line, #f1f1f2);
+    }
+  }
+}
