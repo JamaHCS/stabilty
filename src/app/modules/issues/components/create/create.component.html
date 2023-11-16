@@ -1,0 +1,68 @@
+<div class="container create-issue-container">
+  <div class="header">
+    <h1 class="wm">Create issue</h1>
+  </div>
+  <form [formGroup]="form">
+    <div class="first">
+      <div class="left">
+        <div class="input-group">
+          <label class="wm" for="product">Product</label>
+          <p-dropdown [options]="products" formControlName="products" [showClear]="true"
+            placeholder="Select a product"></p-dropdown>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="input-group">
+          <label for="environment" class="wm">Environment</label>
+          <div class="elements">
+            <div class="group-select">
+              <label for="dev">Development</label>
+              <p-checkbox name="environment" value="development"[binary]="true" formControlName="environment"
+                inputId="prod"></p-checkbox>
+            </div>
+
+            <div class="group-select">
+              <label for="prod">Production</label>
+              <p-checkbox name="environment" value="production" [binary]="true" formControlName="environment"
+                inputId="prod"></p-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="second">
+      <h2 class="wm">Issue</h2>
+      <table>
+        <tr>
+          <td>
+            <label for="tittle" class="wm">Title</label>
+          </td>
+          <td>
+            <input type="text" pInputText formControlName="tittle" placeholder="type" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="description" class="wm">Description</label>
+          </td>
+          <td>
+            <input type="text" pInputText formControlName="description" placeholder="type" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="impact" class="wm">Business Impact</label>
+          </td>
+          <td>
+            <input type="text" pInputText formControlName="impact" placeholder="type" />
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <div class="buttons">
+      <button type="button" class="wm">Create</button>
+    </div>
+  </form>
+</div>

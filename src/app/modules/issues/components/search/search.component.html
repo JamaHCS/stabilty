@@ -1,0 +1,47 @@
+<div class="search-issue-container container">
+  <div class="header">
+    <h1 class="wm">Search Issue</h1>
+  </div>
+
+  <form [formGroup]="form">
+    <div class="input-container">
+      <label for="sprint" class="wm">Sprint</label>
+      <input type="text" pInputText formControlName="sprint" placeholder="sprint" />
+    </div>
+    <div class="input-container options">
+      <div class="option">
+        <p-radioButton name="options" value="id" formControlName="options" inputId="options1"></p-radioButton>
+        <label for="options1">ID Issue</label>
+      </div>
+
+      <div class="option">
+        <p-radioButton name="options" value="name" formControlName="options" inputId="options2"></p-radioButton>
+        <label for="options2">Product name</label>
+      </div>
+
+      <div class="option">
+        <p-radioButton name="options" value="sprint" formControlName="options" inputId="options3"></p-radioButton>
+        <label for="options3">Sprint</label>
+      </div>
+
+      <div class="option">
+        <p-radioButton name="options" value="status" formControlName="options" inputId="options4"></p-radioButton>
+        <label for="options4">Status</label>
+      </div>
+
+      <div class="option">
+        <p-radioButton name="options" value="Creation date" formControlName="options"
+          inputId="options5"></p-radioButton>
+        <label for="options5">Creation date</label>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" class="wm">Search</button>
+    </div>
+  </form>
+
+  <div class="general-info">
+    <h2 class="wm">General Info</h2>
+    <p-steps [model]="items" [readonly]="false" [activeIndex]="6"></p-steps>
+  </div>
+</div>
