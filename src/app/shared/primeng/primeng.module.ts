@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TableModule } from 'primeng/table';
 import { StepsModule } from 'primeng/steps';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [],
@@ -25,9 +26,11 @@ import { StepsModule } from 'primeng/steps';
     RadioButtonModule,
     TableModule,
     StepsModule,
+    DialogModule
   ],
   exports: [
     MenuModule,
+    DialogModule,
     InputTextModule,
     ButtonModule,
     SplitButtonModule,

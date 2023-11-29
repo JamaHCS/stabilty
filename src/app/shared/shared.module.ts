@@ -4,9 +4,10 @@ import { PrimengModule } from './primeng/primeng.module';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FloatingMenuComponent } from './components/floating-menu/floating-menu.component';
+import { DialogCreateIssueComponent } from './components/dialog-create-issue/dialog-create-issue.component';
 
 @NgModule({
-  declarations: [FloatingMenuComponent],
+  declarations: [FloatingMenuComponent, DialogCreateIssueComponent],
   imports: [
     CommonModule,
     PrimengModule,

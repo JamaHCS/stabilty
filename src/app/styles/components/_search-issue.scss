@@ -1,7 +1,7 @@
 .search-issue-container {
   display: flex;
   flex-direction: column;
-justify-content: flex-start;
+  justify-content: flex-start;
   align-items: center;
   gap: 3rem;
   min-height: 100vh;
@@ -38,7 +38,7 @@ justify-content: flex-start;
       &.options {
         flex-direction: row;
         gap: 6rem;
-        
+
         label {
           margin-left: 0.5rem;
         }
@@ -51,20 +51,33 @@ justify-content: flex-start;
   }
 
   .general-info {
+    margin-top: 10rem;
     padding: 1rem;
-    background: var(--base-divider-line, #f1f1f2);
-    width: 100%;
-    min-height: 23rem;
-
+    background: #F9EFDC;
+    width: 100%; 
+    min-height: 26rem;
+    border-radius: 1rem;
+    
+    -webkit-box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.75);
+    
+    // #2A8703
+    
+    
     li:not(.p-disabled) {
       .p-steps-number {
-        background: #eef2ff !important;
-        color: #0071dc !important;
+        // background: #eef2ff !important;
+        background: #2A8703;
+        color: white !important;
+        // height: 1rem;
+        // width: 1rem;
       }
     }
-
+    
     .p-menuitem-link {
-      background: var(--base-divider-line, #f1f1f2);
+      background: var(--base-divider-line, #F9EFDC);
+      // background: #F9EFDC;
     }
   }
 }
