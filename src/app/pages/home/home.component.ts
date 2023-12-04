@@ -9,8 +9,8 @@ import { TicketStatus } from 'src/app/utils/global/enums';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
-  public status: boolean = false;
+export class HomeComponent implements OnInit {
+  public status: string = 'Actives';
   public tickets: Ticket[] = [];
   public selectedTickets: Ticket[] = [];
 
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit{
         this.tickets = res.map((e) => ({
           ...e,
           date: new Date(e.date),
-          status: e.status ? TicketStatus.open : TicketStatus.closed,
+          date_end: new Date(e.date_end),
         }));
       },
     });

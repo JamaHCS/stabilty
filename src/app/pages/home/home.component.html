@@ -3,15 +3,29 @@
     <h1 class="wm">My tickets</h1>
   </div>
 
+  <div class="search-wm">
+
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText placeholder="Search everything at Walmart" />
+    </span>
+
+  </div>
+
   <div class="status">
     <div class="input-radio-button">
-      <p-radioButton name="status" [value]="true" [(ngModel)]="status" inputId="true"></p-radioButton>
+      <p-radioButton name="status" [value]="'Actives'" [(ngModel)]="status" inputId="Actives"></p-radioButton>
       <label for="true" class="ml-2">Actives</label>
     </div>
 
     <div class="input-radio-button">
-      <p-radioButton name="status" [value]="false" [(ngModel)]="status" inputId="false"></p-radioButton>
+      <p-radioButton name="status" [value]="'Closed'" [(ngModel)]="status" inputId="Closed"></p-radioButton>
       <label for="false" class="ml-2">Closed</label>
+    </div>
+
+    <div class="input-radio-button">
+      <p-radioButton name="status" [value]="'Delayed'" [(ngModel)]="status" inputId="Delayed"></p-radioButton>
+      <label for="false" class="ml-2">Delayed</label>
     </div>
   </div>
 
@@ -22,8 +36,18 @@
     </mat-form-field>
 
     <mat-form-field class="input-container">
-      <mat-label>Title</mat-label>
-      <input matInput (input)="filter($event, table, 'title')" type="text">
+      <mat-label>Product</mat-label>
+      <input matInput (input)="filter($event, table, 'product')" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <mat-label>Fecha de alta</mat-label>
+      <input matInput (input)="filter($event, table, 'date')" type="date">
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <mat-label>Fecha de termino</mat-label>
+      <input matInput (input)="filter($event, table, 'date_end')" type="date">
     </mat-form-field>
 
     <mat-form-field class="input-container">
@@ -32,44 +56,56 @@
     </mat-form-field>
 
     <mat-form-field class="input-container">
-      <mat-label>Fecha</mat-label>
-      <input matInput (input)="filter($event, table, 'date')" type="date">
+      <mat-label>Responsable</mat-label>
+      <input matInput (input)="filter($event, table, 'responsable')" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="input-container">
+      <mat-label>Environment</mat-label>
+      <input matInput (input)="filter($event, table, 'environment')" type="text">
     </mat-form-field>
   </div>
-
+ 
   <div class="table-tickets">
     <div class="card">
       <p-table #table [value]="tickets" [(selection)]="selectedTickets" [rowHover]="true" dataKey="id">
         <ng-template pTemplate="header">
           <tr>
-            <th>
-              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-            </th>
             <th pSortableColumn="id" style="min-width: 10rem;"># Issue<p-sortIcon field="id"></p-sortIcon></th>
-            <th pSortableColumn="title" style="min-width: 10rem;">Title<p-sortIcon field="title"></p-sortIcon></th>
+            <th pSortableColumn="product" style="min-width: 10rem;">Product<p-sortIcon field="product"></p-sortIcon>
+            </th>
             <th pSortableColumn="date" style="min-width: 10rem;">Fecha de alta<p-sortIcon field="date"></p-sortIcon>
             </th>
-            <th pSortableColumn="active_days" style="min-width: 10rem;">Active days<p-sortIcon
-                field="active_days"></p-sortIcon></th>
+            <th pSortableColumn="date_end" style="min-width: 10rem;">Fecha de Termino (aprox)<p-sortIcon
+                field="date_end"></p-sortIcon>
+            </th>
             <th pSortableColumn="status" style="min-width: 10rem;">Status<p-sortIcon field="status"></p-sortIcon></th>
             <th pSortableColumn="responsable" style="min-width: 10rem;">Responsable<p-sortIcon
                 field="responsable"></p-sortIcon></th>
-            <th pSortableColumn="commentaries" style="min-width: 10rem;">Comentarios<p-sortIcon
-                field="commentaries"></p-sortIcon></th>
+            <th pSortableColumn="environment" style="min-width: 10rem;">Environment<p-sortIcon
+                field="environment"></p-sortIcon></th>
+            <th></th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-element>
           <tr>
-            <td>
-              <p-tableCheckbox [value]="element"></p-tableCheckbox>
-            </td>
             <td>{{element.id}}</td>
-            <td>{{element.title}}</td>
+            <td>{{element.product}}</td>
             <td>{{element.date | date}}</td>
-            <td>{{element.active_days}}</td>
-            <td>{{element.status == 'open' ? 'Open' : 'Closed' }}</td>
+            <td>{{element.date_end | date}}</td>
+            <td>
+              <span [class]="element.status + ' chips-wm'">
+                {{element.status }}
+              </span>
+
+            </td>
             <td>{{element.responsable }}</td>
-            <td>{{element.commentaries }}</td>
+            <td>{{element.environment }}</td>
+            <td>
+              <p-button icon="pi pi-pencil" [rounded]="true" [text]="true"
+                [routerLink]="'/home/issues/general-info/' + element.id"
+                ></p-button>
+            </td>
           </tr>
         </ng-template>
       </p-table>

@@ -7,7 +7,8 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./floating-menu.component.scss'],
 })
 export class FloatingMenuComponent {
-  items: MenuItem[] | undefined;
+  public items: MenuItem[] | undefined;
+  public visible: boolean = false;
 
   ngOnInit() {
     this.items = [
@@ -20,16 +21,16 @@ export class FloatingMenuComponent {
         items: [
           {
             label: 'Create issue',
-            routerLink: '/home/issues/create',
+            command: () => (this.visible = true),
           },
-          {
-            label: 'Edit issue',
-            routerLink: '/home/issues/edit',
-          },
-          {
-            label: 'Search issue',
-            routerLink: '/home/issues/search',
-          },
+          // {
+          //   label: 'Edit issue',
+          //   routerLink: '/home/issues/edit',
+          // },
+          // {
+          //   label: 'Search issue',
+          //   routerLink: '/home/issues/search',
+          // },
         ],
       },
       {
